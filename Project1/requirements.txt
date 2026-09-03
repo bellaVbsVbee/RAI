@@ -1,0 +1,9 @@
+folktables
+fairlearn
+cleanlab
+scikit-learn
+pandas
+matplotlib
+seaborn
+jupyter
+ipykernel
