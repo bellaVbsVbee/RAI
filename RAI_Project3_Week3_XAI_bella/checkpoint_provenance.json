@@ -1,0 +1,20 @@
+{
+  "Cardiomegaly": {
+    "source_run": "/scratch/adipa/invariance_results/rq1/natural/erm/Cardiomegaly/seed_42",
+    "epoch": 3,
+    "export": "DenseNet121 state_dict, backbone unchanged, fc renamed classifier; optimizer omitted",
+    "sha256": "1300ecb71c73b1dd4bc078d81b54b990e1472da4fca742bcc23fbb03d2bee299"
+  },
+  "Edema": {
+    "source_run": "/scratch/adipa/invariance_results/rq1/natural/erm/Edema/seed_42",
+    "epoch": 3,
+    "export": "DenseNet121 state_dict, backbone unchanged, fc renamed classifier; optimizer omitted",
+    "sha256": "686f257b027d5615941dba642a52c662ae55edcea640c56137fc6709492d6e22"
+  },
+  "Atelectasis": {
+    "source_run": "/scratch/adipa/invariance_results/rq1/natural/erm/Atelectasis/seed_42",
+    "epoch": 4,
+    "export": "DenseNet121 state_dict, backbone unchanged, fc renamed classifier; optimizer omitted",
+    "sha256": "d1d224056ef652ad9471d3af5d97d4dcf7bb3d7297cef6d62ce0c11a79796e8b"
+  }
+}
