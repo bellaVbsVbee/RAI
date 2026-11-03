@@ -17,6 +17,7 @@ def plot_confusion_matrices(
     y_true,
     models,
     task,
+    is_binary,
     output_dir: str = "week1/images",
     filename: str = "confusion_matrix"
 ):
@@ -42,9 +43,13 @@ def plot_confusion_matrices(
     fig.subplots_adjust(top=0.75,wspace=0.3) # top=0.75 for Edema, wspace=0.1 for Edema, 
 
     for ax, (name, predictions, score, metric, n) in zip(axes, models):
-        y_true_labelled = ["Negative" if x == 0.0 else "Positive" for x in y_true]
-        y_preds_labelled = ["Negative" if x == 0.0 else "Positive" for x in predictions]
-        
+        if is_binary:
+            y_true_labelled = ["Negative" if x == 0.0 else "Positive" for x in y_true]
+            y_preds_labelled = ["Negative" if x == 0.0 else "Positive" for x in predictions]
+        else:
+            y_true_labelled = y_true
+            y_preds_labelled = predictions
+
         # Use consistent class order in both matrices
         classes = np.unique(y_true_labelled)
         display_labels = [str(c) for c in classes]
@@ -185,13 +190,13 @@ def plot_tasks(
             ("Embedding Probe", y_preds_embed, score_embed, "Balanced Accuracy", n),
             ("TF-IDF Probe", y_preds_tfidf, score_tfidf, "Balanced Accuracy", n)
         ]
-        plot_confusion_matrices(y_true, models, task_name)
+        plot_confusion_matrices(y_true, models, task_name, is_binary=False)
     elif task_type == "binary":
         models = [
             ("Embedding Probe", y_preds_embed, score_embed, "AUROC", n),
             ("TF-IDF Probe", y_preds_tfidf, score_tfidf, "AUROC", n)
         ]
-        plot_confusion_matrices(y_true, models, task_name)
+        plot_confusion_matrices(y_true, models, task_name, is_binary=True)
     else:
         raise ValueError(f"Unknown task type: {task_type}")
     
@@ -250,11 +255,11 @@ def main():
     tasks = {
         "edema": "Edema",
         # "pleural_effusion": "Pleural Effusion",
-        # "sex": "Sex",
+        "sex": "Sex",
         # "health_system": "Health System",
         # "age_years": "Age (Years)",
         # "study_year": "Study Year",
-        # "findings_words": "Report Length (Words)",
+        "findings_words": "Report Length (Words)",
         # "study_description": "Study Description",
         # "manufacturer": "Scanner Manufacturer",
         # "institution": "Hospital Site",
