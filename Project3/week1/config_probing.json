@@ -1,0 +1,142 @@
+{
+    "health_system": {
+        "type": "multiclass",
+        "top_k": -1,
+        "n_splits": 5,
+        "max_features": 50000,
+        "ngram_range": [
+            1,
+            2
+        ],
+        "min_df": 2,
+        "max_iter_tfidf": 2000,
+        "max_iter_scalar": 2000,
+        "random_result": 0.3333
+    },
+    "edema": {
+        "type": "binary",
+        "top_k": -1,
+        "n_splits": 5,
+        "max_features": 50000,
+        "ngram_range": [
+            1,
+            2
+        ],
+        "min_df": 2,
+        "max_iter_tfidf": 2000,
+        "max_iter_scalar": 2000,
+        "random_result": 0.5
+    },
+    "pleural_effusion": {
+        "type": "binary",
+        "top_k": -1,
+        "n_splits": 5,
+        "max_features": 50000,
+        "ngram_range": [
+            1,
+            2
+        ],
+        "min_df": 2,
+        "max_iter_tfidf": 2000,
+        "max_iter_scalar": 2000,
+        "random_result": 0.5
+    },
+    "findings_words": {
+        "type": "regression",
+        "top_k": -1,
+        "n_splits": 5,
+        "max_features": 3000,
+        "ngram_range": [
+            1,
+            2
+        ],
+        "min_df": 1,
+        "max_iter_tfidf": 2000,
+        "max_iter_scalar": 2000,
+        "random_result": 0.0
+    },
+    "age_years": {
+        "type": "regression",
+        "top_k": -1,
+        "n_splits": 5,
+        "max_features": 50000,
+        "ngram_range": [
+            1,
+            2
+        ],
+        "min_df": 1,
+        "max_iter_tfidf": 2000,
+        "max_iter_scalar": 2000,
+        "random_result": 0.0
+    },
+    "manufacturer": {
+        "type": "multiclass",
+        "top_k": 6,
+        "n_splits": 5,
+        "max_features": 50000,
+        "ngram_range": [
+            1,
+            2
+        ],
+        "min_df": 2,
+        "max_iter_tfidf": 2000,
+        "max_iter_scalar": 2000,
+        "random_result": 0.1667
+    },
+    "institution": {
+        "type": "multiclass",
+        "top_k": 10,
+        "n_splits": 5,
+        "max_features": 50000,
+        "ngram_range": [
+            1,
+            2
+        ],
+        "min_df": 2,
+        "max_iter_tfidf": 2000,
+        "max_iter_scalar": 2000,
+        "random_result": 0.1
+    },
+    "study_description": {
+        "type": "multiclass",
+        "top_k": 10,
+        "n_splits": 5,
+        "max_features": 50000,
+        "ngram_range": [
+            1,
+            2
+        ],
+        "min_df": 2,
+        "max_iter_tfidf": 2000,
+        "max_iter_scalar": 2000,
+        "random_result": 0.1
+    },
+    "sex": {
+        "type": "binary",
+        "top_k": -1,
+        "n_splits": 5,
+        "max_features": 50000,
+        "ngram_range": [
+            1,
+            2
+        ],
+        "min_df": 1,
+        "max_iter_tfidf": 2000,
+        "max_iter_scalar": 2000,
+        "random_result": 0.5
+    },
+    "study_year": {
+        "type": "regression",
+        "top_k": -1,
+        "n_splits": 5,
+        "max_features": 50000,
+        "ngram_range": [
+            1,
+            2
+        ],
+        "min_df": 2,
+        "max_iter_tfidf": 2000,
+        "max_iter_scalar": 2000,
+        "random_result": 0.0
+    }
+}
